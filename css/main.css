@@ -189,6 +189,21 @@
         white-space: nowrap;
     }
     
+    .btn-modal {
+        background-color: #fff;
+        border: none;
+        border-radius: 44px;
+        color: #283c8c;
+        font-family: montserrat, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 22px;
+        min-width: 250px;
+        padding: 20px 30px;
+        white-space: nowrap;
+        width: 250px;
+    }
+    
     .table-study {
         display: flex;
         margin: 0 auto;
@@ -251,6 +266,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-bottom: 60px;
     }
     
     .video h4 {
@@ -447,6 +463,11 @@
         width: 100%;
         max-height: max(120px, calc(200vw / 1440));
         fill: #fff;
+        transform: scale(-2, 2);
+    }
+
+    #healthcare > p > a:hover {
+        color: #fff;
     }
     
     .footer-middle {
@@ -462,6 +483,7 @@
     }
     
     .footer-middle p {
+        color: #fff;
         font-size: 1.1em;
     }
     
@@ -471,7 +493,7 @@
     }
     
     .footer-middle p a:hover {
-        color: #fff;
+        color: #3d4f97;
         text-decoration: none;
     }
     
@@ -528,7 +550,20 @@
     .footer-bottom-middle {
         padding-top: 8px;
     }
-    
+
+    .footer-bottom > .footer-bottom-middle > p {
+        color: #fff;
+    }
+
+    .footer-bottom li {
+        background: transparent;
+    }
+
+    .footer-bottom li:hover {
+        color:#fff;
+        text-decoration: underline;
+    }
+
     .mont-Regular {
         font-family: montserrat, sans-serif;
         font-weight: 400;
@@ -560,6 +595,101 @@
     }
     /* FONTS END */
     
+    .modal .modal-dialog {
+        max-width: 800px;
+    }
+    
+    .modal .modal-content {
+        background-color: transparent;
+        border: none;
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .modal .modal-body {
+        padding: 0;
+    }
+    
+    .modal .btn-close {
+        position: absolute;
+        right: 0;
+        padding: 1em;
+    }
+    
+    .modal h1 {
+        font-size: 2.3em;
+        font-weight: bold;
+    }
+    
+    .modal .contact-modal {
+        background: #283c8c;
+        color: #fff;
+        padding: 2em;
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 30px;
+    }
+    
+    .modal textarea {
+        border-radius: 10px;
+        width: 100%;
+    }
+    
+    .separator {
+        margin: 0;
+        background: #ddd;
+        max-height: 1px;
+        min-height: 1px;
+        font-size: 1px;
+        line-height: 1px;
+    }
+    
+    @media (max-width: 576px) {
+        .contact-modal {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }
+    
+    .modal .form-control:focus {
+        box-shadow: inset 0 -1px 0 #7e7e7e;
+    }
+    
+    .modal .form-control {
+        background-color: #fff;
+        color: #000;
+        padding-left: 0;
+        border: 0;
+        border-radius: 30px;
+        border-bottom: 1px solid #fff;
+    }
+    
+    .contact-modal .btn {
+        font-weight: 800;
+        background-color: #fff;
+        border-radius: 30px;
+        padding: 0.5em 0;
+    }
+    
+    .contact-modal .btn:hover {
+        background-color: #3d4f97;
+    }
+    
+    p {
+        text-align: center;
+        padding-top: .2em;
+        color: #000;
+    }
+    
+    p a {
+        color: #e1e1e1;
+        text-decoration: none;
+    }
+    
+    p a:hover {
+        color: #fff;
+    }
+    
     @media screen and (max-width: 1199px) {
         li {
             background: #fff;
@@ -570,6 +700,9 @@
         .navbar>.container-fluid {
             display: flex;
             flex-direction: row-reverse;
+        }
+        .navbar-brand {
+            display:none;
         }
         .overlay>nav>div>button {
             margin-left: 1rem;
