@@ -7,8 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -433,12 +432,12 @@
                                     placeholder="First Name" data-sb-validations="required">
                             </div>
                             <div class="mb-3 col-lg-4 text-center">
-                                <label class=" form-label " for="name ">Last Name*</label>
+                                <label class=" form-label" for="name">Last Name*</label>
                                 <input class="form-control col-lg-4 text-center" id="last-name" type="text"
                                     placeholder="Last Name" data-sb-validations="required">
                             </div>
                             <div class="mb-3 col-lg-4 text-center">
-                                <label class="form-label " for="name ">Your Email*</label>
+                                <label class="form-label" for="name">Your Email*</label>
                                 <input class="form-control col-lg-4 text-center" id="email" type="text"
                                     placeholder="Your Email" data-sb-validations="required">
                             </div>
@@ -469,8 +468,7 @@
     </div>
 
     <footer class="container-fluid">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="right-triangle "
-            preserveAspectRatio="none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="right-triangle" preserveAspectRatio="none">
             <polygon points="100 0, 100 100, 0 100" />
         </svg>
         <div class="footer-middle">
@@ -479,7 +477,7 @@
                     who may qualify, identify a research center by entering the ZIP Code below and call us or complete
                     the contact form.</p>
             </div>
-            <div class="footer-highlight"><a href=" ">Call (877) 223-3576</a></div>
+            <div class="footer-highlight"><a href="">Call (877) 223-3576</a></div>
             <div class="mw-972 pt-5">
                 <p><a class="btn-reverse mx-auto" data-bs-toggle="modal" data-bs-target="#ModalForm">or Contact Us</a>
                 </p>
@@ -491,10 +489,93 @@
                         <form class="mb-5">
                             <input class="form-control form-control-lg" type="text"
                                 placeholder="Please enter a ZIP Code or address" aria-label=".form-control-lg">
-                            <p class="text-start mt-5">Location results</p>
-                            <textarea class="form-control" aria-label="Location results goes here"></textarea>
+                            <p class="text-start mt-5 px-3">Location results</p>
+
+                            <div class="location-list-outer">
+                                <div id="accordion location-list-inner">
+                                    <div class="accordion-item location">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                <p id="siteAccount"><strong>UCSD Jacobs Retina Center</strong></p>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p id="siteAccountStreetAddress">9415 Campus Point Dr</p>
+                                                <p>
+                                                    <span id="siteAccountCity">La Jolla</span>, <span
+                                                        id="siteAccountProvState">California</span>
+                                                    <span id="siteAccountPostalCode">92093-1350</span>
+                                                </p>
+                                                <p id="siteAccountMainPhone"><a href="tel:858-534-3513"> <img
+                                                            src="images/icon-phone.png">(858) 534-3513</a></p>
+                                                <p id="siteAccountDirections"><a href=""><img
+                                                            src="images/icon-directions.svg">Directions</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+
+                                    <div class="accordion-item location">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                                <p id="siteAccount"><strong>Retina Vitreous Associates</strong></p>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse hide"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p id="siteAccountStreetAddress">9001 Wilshire Blvd</p>
+                                                <p>
+                                                    <span id="siteAccountCity">Beverly Hills</span>, <span
+                                                        id="siteAccountProvState">California</span>
+                                                    <span id="siteAccountPostalCode">90211-1842</span>
+                                                </p>
+                                                <p id="siteAccountMainPhone"><a href="tel:310-652-1956"> <img
+                                                            src="images/icon-phone.png">(310) 652-1956</a></p>
+                                                <p id="siteAccountDirections"><a href=""><img
+                                                            src="images/icon-directions.svg">Directions</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="accordion-item location">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                                <p id="siteAccount"><strong>The Retina Partners</strong></p>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse hide"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <p id="siteAccountStreetAddress">6500 Ventura Blvd Ste 250</p>
+                                                <p>
+                                                    <span id="siteAccountCity">Encino</span>, <span
+                                                        id="siteAccountProvState">California</span>
+                                                    <span id="siteAccountPostalCode">91436-2018</span>
+                                                </p>
+                                                <p id="siteAccountMainPhone"><a href="tel:818-788-9333"> <img
+                                                            src="images/icon-phone.png">(818) 788-9333</a></p>
+                                                <p id="siteAccountDirections"><a href=""><img
+                                                            src="images/icon-directions.svg">Directions</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </form>
+
                     </div>
                     <div class="col-lg-6">
                         <div class="iframe-wrapper">
@@ -509,7 +590,7 @@
                 <div class="row">
                     <div class="col-lg-12 pt-5 px-5" id="healthcare">
                         <p>If you are a Healthcare Professional and are interested in learning more, please <a
-                                href=" ">click here</a>.</p>
+                                href="">click here</a>.</p>
                     </div>
                 </div>
 
