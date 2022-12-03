@@ -237,13 +237,13 @@ function createIndexItem(data, count) {
     entryHtml.className = "accordion-item location",
     0 === count && (entryHtml.className = "accordion-item location active"),
     entryHtml.setAttribute("data-id", count),
-    entryHtml.innerHTML += '<h2 id="heading-' + count + '" class="accordion-header"><button class="accordion-button" type="button" aria-expanded="false"><p id="siteAccount"><strong>' + (locationData.Name1? locationData.Name : locationData.City + " Center - " + locationData.PostalCode) + "</strong></p></button></h2>"+
+    entryHtml.innerHTML += '<h2 id="heading-' + count + '" class="accordion-header"><button class="accordion-button" type="button" aria-expanded="false"><p id="siteAccount"><strong>' + (locationData.Name? locationData.Name : locationData.City + " Center - " + locationData.PostalCode) + "</strong></p></button></h2>"+
                             (locationData.AddressLine ? '<p id="siteAccountStreetAddress">' + locationData.AddressLine1 + '</p>' : "<p></p>") +
                             '<div aria-labelledby="heading-'+ count +'" class="accordion-collapse ">'+
                                 '<div class="accordion-body">'+
                                     (locationData.City ? '<p> <span id="siteAccountCity">' + locationData.City + '</span>, ' : "" ) +
                                     (locationData.Region ? '<span id="siteAccountProvState">' + locationData.Region + '</span>' : "") +
-                                    (locationData.PostalCode ? '<span id="siteAccountPostalCode"' + locationData.PostalCode + '</span>': "") +
+                                    (locationData.PostalCode ? '<span id="siteAccountPostalCode"> ' + locationData.PostalCode + '</span>': "") +
                                     '</p>'+
                                     (locationData.Phone ? '<p id="siteAccountMainPhone"><a href="tel:' + locationData.Phone + '"><img src="' + phoneIcon + '" />' + formatPhone(locationData.Phone) + '</a></p>': "")+
                                     '<p id="siteAccountDirections"><a href="http://maps.google.com/maps?daddr=' + (locationData.AddressLine ? locationData.AddressLine : "") + " " + (locationData.City ? locationData.City : "") + " " + (locationData.Region ? locationData.Region : "") + " " + (locationData.PostalCode ? locationData.PostalCode : "") + "&saddr=" + $lat + ", " + $lng + '" target="_blank"><img src="'+ directionsIcon+ '">'+$entries.dataset.directionstext+'</a></p>'+
