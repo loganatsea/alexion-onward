@@ -237,7 +237,7 @@ function createIndexItem(data, count) {
     entryHtml.className = "accordion-item location",
     0 === count && (entryHtml.className = "accordion-item location active"),
     entryHtml.setAttribute("data-id", count),
-    entryHtml.innerHTML += '<h2 id="heading-' + count + '" class="accordion-header"><button class="accordion-button" type="button" aria-expanded="false"><p id="siteAccount"><strong>' + locationData.Name + "</strong></p></button></h2>"+
+    entryHtml.innerHTML += '<h2 id="heading-' + count + '" class="accordion-header"><button class="accordion-button" type="button" aria-expanded="false"><p id="siteAccount"><strong>' + (locationData.Name1? locationData.Name : locationData.City + " Center - " + locationData.PostalCode) + "</strong></p></button></h2>"+
                             (locationData.AddressLine ? '<p id="siteAccountStreetAddress">' + locationData.AddressLine1 + '</p>' : "<p></p>") +
                             '<div aria-labelledby="heading-'+ count +'" class="accordion-collapse ">'+
                                 '<div class="accordion-body">'+
