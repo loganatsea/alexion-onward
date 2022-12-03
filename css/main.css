@@ -6,7 +6,9 @@
         padding: 0;
         box-sizing: border-box;
     }
-    
+    .hidden {
+        display: none !important;
+    }
     .container-fluid {
         max-width: 1440px;
         padding: 0;
@@ -260,6 +262,7 @@
         margin-bottom: 6rem;
         padding: 0;
         width: 100%;
+        overflow: hidden;
     }
     
     .video-embed {
@@ -504,7 +507,7 @@
         border-radius: 25px;
     }
 
-    .footer-middle #location-list-inner {
+    .footer-middle .location-list-inner {
         background: #fff;
         padding: 20px 0 10px;
         height: 300px;
@@ -512,62 +515,66 @@
         overflow-y: scroll;
     }
 
-    .footer-middle #location-list-inner p {
+    .footer-middle .location-list-inner p {
         color: #000;
         padding: 0 10px;
         text-align: left;
         margin-bottom: 0;
     }
 
-    .footer-middle #location-list-inner #siteAccountMainPhone > a,
-    .footer-middle #location-list-inner #siteAccountDirections > a {
+    .footer-middle .location-list-inner #siteAccountMainPhone > a,
+    .footer-middle .location-list-inner #siteAccountDirections > a {
         color: #283c8c;
     }
 
-    .footer-middle #location-list-inner #siteAccountMainPhone > a:hover,
-    .footer-middle #location-list-inner #siteAccountDirections > a:hover {
+    .footer-middle .location-list-inner #siteAccountMainPhone > a:hover,
+    .footer-middle .location-list-inner #siteAccountDirections > a:hover {
         font-weight: bold;
     }
 
-    .footer-middle #location-list-inner #siteAccountMainPhone > a > img {
+    .footer-middle .location-list-inner #siteAccountMainPhone > a > img {
         height: 30px;
         width: 30px;
         margin-right: 5px;
     }
 
-    .footer-middle #location-list-inner #siteAccountDirections > a > img {
+    .footer-middle .location-list-inner #siteAccountDirections > a > img {
         height: 30px;
         width: 30px;
         margin-right: 5px;
     }
 
-    .footer-middle #location-list-inner hr {
+    .footer-middle .location-list-inner hr {
         border-bottom: 5px solid #bbb;
         margin: 10px;
         size: 5px;
     }
 
-    .footer-middle .iframe-wrapper {
+    .footer-middle .iframe-wrapper, #map {
         border: 5px solid #283c8c;
         border-radius: 25px;
-        max-height: 460px;
         overflow: hidden;
-        -webkit-mask-image: -webkit-radial-gradient(white, black);
+        height: 100%;
+        min-height: 28rem;
     }
 
     .footer-middle iframe {
         width: 100%;
     }
 
-    #accordion\ location-list-inner {
+    .accordion.location-list-inner {
         background: #fff;
         padding: 20px 0 10px;
-        height: 300px;
-        max-height: 300px;
-        overflow-y: scroll;
+        height: 400px;
+        max-height: 400px;
+        overflow-y: auto;
+        float: left;
+        position: relative;
+        scroll-behavior: smooth;
+        width: 100%;
     }
 
-    #accordion\ location-list-inner hr {
+    .accordion.location-list-inner hr {
         border-bottom: 5px solid #bbb;
         margin: 10px 0;
         padding: 0;
@@ -576,7 +583,19 @@
 
     .accordion-item {
         border: 0;
-        padding: 0 30px;
+        padding: 0 40px;
+        position: relative;
+        padding-top: 10px;
+    }
+
+    .accordion-item.location .distance {
+        position: absolute;
+        bottom: 0;
+        right: 40px;
+        margin: 0;
+        font-weight: 500;
+        font-style: italic;
+        padding: 0
     }
 
     .accordion-button {
@@ -591,8 +610,7 @@
         border: 0;
         border-radius: 0;
         overflow-anchor: none;
-        padding-top: 10px;
-        padding-bottom: 2px;
+        padding: 10px 0 2px 0;
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
     }
 
@@ -647,7 +665,26 @@
     }
 
     .accordion-body {
-        padding: 0 1.25rem 1rem;
+        padding: 0 0 1rem;
+    }
+    
+    .accordion-item {
+        min-height: 3.75rem;
+    }
+
+    .accordion-item.active {
+        background-color: #e6edf7
+    }
+
+    .accordion-item.active .accordion-collapse {
+        transition: all .5s;
+        display: block;
+    }
+    .accordion-item:not(.active) .accordion-collapse {
+        display: none;
+    }
+    .accordion-item:not(.active) .accordion-button::after{
+        transform: none;
     }
 
     #siteAccountMainPhone > a > img,
@@ -844,6 +881,12 @@
     .contact-modal .btn:hover {
         background-color: #3d4f97;
     }
+
+    .no-results p, .into-text p{
+        text-align: left;
+        margin: 50px 0;
+        margin-left: 10px;
+    }
     
     p {
         text-align: center;
@@ -859,6 +902,7 @@
     p a:hover {
         color: #fff;
     }
+
     
     @media screen and (max-width: 1199px) {
         li {

@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -484,106 +485,40 @@
                 <p class="mont-ExtraBold" id="research">Find a research center near you:</p>
             </div>
             <div class="container-fluid p-5">
+                <div id="placesContainer"></div>
                 <div class="row">
-                    <div class="col-lg-6">
-                        <form class="mb-5">
-                            <input class="form-control form-control-lg" type="text"
-                                placeholder="Please enter a ZIP Code or address" aria-label=".form-control-lg">
-                            <p class="text-start mt-5 px-3">Location results</p>
-
-                            <div class="location-list-outer">
-                                <div id="accordion location-list-inner">
-                                    <div class="accordion-item location">
-                                        <h2 class="accordion-header" id="headingOne">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
-                                                <p id="siteAccount"><strong>UCSD Jacobs Retina Center</strong></p>
-                                            </button>
-                                        </h2>
-                                        <div id="collapseOne" class="accordion-collapse collapse show"
-                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p id="siteAccountStreetAddress">9415 Campus Point Dr</p>
-                                                <p>
-                                                    <span id="siteAccountCity">La Jolla</span>, <span
-                                                        id="siteAccountProvState">California</span>
-                                                    <span id="siteAccountPostalCode">92093-1350</span>
-                                                </p>
-                                                <p id="siteAccountMainPhone"><a href="tel:858-534-3513"> <img
-                                                            src="images/icon-phone.png">(858) 534-3513</a></p>
-                                                <p id="siteAccountDirections"><a href=""><img
-                                                            src="images/icon-directions.svg">Directions</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                    </div>
-
-                                    <div class="accordion-item location">
-                                        <h2 class="accordion-header" id="headingTwo">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
-                                                <p id="siteAccount"><strong>Retina Vitreous Associates</strong></p>
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTwo" class="accordion-collapse collapse hide"
-                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p id="siteAccountStreetAddress">9001 Wilshire Blvd</p>
-                                                <p>
-                                                    <span id="siteAccountCity">Beverly Hills</span>, <span
-                                                        id="siteAccountProvState">California</span>
-                                                    <span id="siteAccountPostalCode">90211-1842</span>
-                                                </p>
-                                                <p id="siteAccountMainPhone"><a href="tel:310-652-1956"> <img
-                                                            src="images/icon-phone.png">(310) 652-1956</a></p>
-                                                <p id="siteAccountDirections"><a href=""><img
-                                                            src="images/icon-directions.svg">Directions</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                    </div>
-                                    <div class="accordion-item location">
-                                        <h2 class="accordion-header" id="headingThree">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                                <p id="siteAccount"><strong>The Retina Partners</strong></p>
-                                            </button>
-                                        </h2>
-                                        <div id="collapseThree" class="accordion-collapse collapse hide"
-                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <p id="siteAccountStreetAddress">6500 Ventura Blvd Ste 250</p>
-                                                <p>
-                                                    <span id="siteAccountCity">Encino</span>, <span
-                                                        id="siteAccountProvState">California</span>
-                                                    <span id="siteAccountPostalCode">91436-2018</span>
-                                                </p>
-                                                <p id="siteAccountMainPhone"><a href="tel:818-788-9333"> <img
-                                                            src="images/icon-phone.png">(818) 788-9333</a></p>
-                                                <p id="siteAccountDirections"><a href=""><img
-                                                            src="images/icon-directions.svg">Directions</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </form>
-
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="iframe-wrapper">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24194.347958067236!2d-73.95317149999998!3d40.7115551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bfd06c12a41%3A0x8279f2291cc5d76c!2sWilliamsburg%2C%20Brooklyn%2C%20NY!5e0!3m2!1sen!2sus!4v1666844283017!5m2!1sen!2sus"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                    <div id="search-index" class="col-lg-6">
+                        <div>
+                            <input id="address" class="form-control form-control-lg" type="text" name="address" class="pac-target-input"
+                                placeholder="Please enter a ZIP Code or address" aria-label=".form-control-lg" autocomplete="off">
+                            
                         </div>
+                        <div class="into-text px-3" id="intro">
+                            <p>
+                                <strong>Please enter a zip code or address</strong><br>
+                                Here will be shown a list of the nearest locations to the address entered.
+                            </p>
+                        </div>
+                        <div class="no-results px-3 hidden" id="no-entries">
+                            <p>
+                                <strong>No results found</strong><br>
+                                Your search did not return any results. Please try expanding your search area or call us at (877) 223-3576 for support.
+                            </p>
+                        </div>
+                        <div id="location-results" class="hidden">
+                            <p class="text-start mt-5 px-3">Location results</p>
+                            <div class="location-list-outer mb-5" id="entries" 
+                                data-service="http://solirisinfusionfinder.com/api/solirisinfusionfinder/GetLocationData" 
+                                data-directionsText="Directions" 
+                                data-mileText="mile away" 
+                                data-milesText="miles away">
+                                <div class="accordion location-list-inner" id="entries-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-5">
+                        <div id="map"></div>
                     </div>
                 </div>
                 <hr>
@@ -622,6 +557,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
+    <script src="js/main.js"></script>
+    <script async
+            defer
+            src="https://maps.googleapis.com/maps/api/js?key={{KEY}}&libraries=places&callback=initMap"></script>
+    
 
 </body>
 
