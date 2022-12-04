@@ -158,11 +158,11 @@ function loadPoints() {
 
 function addMarker(data,i) {
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(data.location.Latitude,data.location.Longitude),
+        position: new google.maps.LatLng(data.Latitude,data.Longitude),
         icon: mainIcon,
         map: $map,
         id: i,
-        title: data.location.Name
+        title: (data.Name ? data.Name : data.City + " Center - " + data.PostalCode)
     });
     google.maps.event.addListener(marker, "click", function() {
         for (var e = 0; e < $poiMarkers.length; e++)
@@ -219,42 +219,43 @@ function highlightIndexEntry(data) {
     var selected = document.querySelector(".accordion-item[data-id='" + data + "']");
     selected.classList.add("active"),
     selected.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: 'nearest', 
+        inline: 'start' 
       });
 }
 function highlightMapPoint(data) {
     for (var i = 0; i < $poiMarkers.length; i++)
         $poiMarkers[i].setIcon(mainIcon);
     var index = $poiMarkers.findIndex(function(point) {
-        return point.id === parseInt(data)
+        return parseInt(point.id) === parseInt(data)
     });
     $poiMarkers[index].setIcon(selectIcon);
 }
 
 function createIndexItem(data, count) {
-    var locationData = data.location
-      , entryHtml = document.createElement("div");
+    var entryHtml = document.createElement("div");
     entryHtml.className = "accordion-item location",
     0 === count && (entryHtml.className = "accordion-item location active"),
     entryHtml.setAttribute("data-id", count),
-    entryHtml.innerHTML += '<h2 id="heading-' + count + '" class="accordion-header"><button class="accordion-button" type="button" aria-expanded="false"><p id="siteAccount"><strong>' + (locationData.Name? locationData.Name : locationData.City + " Center - " + locationData.PostalCode) + "</strong></p></button></h2>"+
-                            (locationData.AddressLine ? '<p id="siteAccountStreetAddress">' + locationData.AddressLine1 + '</p>' : "<p></p>") +
+    entryHtml.innerHTML += '<h2 id="heading-' + count + '" class="accordion-header"><button class="accordion-button" type="button" aria-expanded="false"><p id="siteAccount"><strong>' + (data.Name? data.Name : data.City + " Center - " + data.PostalCode) + "</strong></p></button></h2>"+
+                            (data.AddressLine ? '<p id="siteAccountStreetAddress">' + data.AddressLine + '</p>' : "<p></p>") +
                             '<div aria-labelledby="heading-'+ count +'" class="accordion-collapse ">'+
                                 '<div class="accordion-body">'+
-                                    (locationData.City ? '<p> <span id="siteAccountCity">' + locationData.City + '</span>, ' : "" ) +
-                                    (locationData.Region ? '<span id="siteAccountProvState">' + locationData.Region + '</span>' : "") +
-                                    (locationData.PostalCode ? '<span id="siteAccountPostalCode"> ' + locationData.PostalCode + '</span>': "") +
+                                    (data.City ? '<p> <span id="siteAccountCity">' + data.City + '</span>, ' : "" ) +
+                                    (data.Region ? '<span id="siteAccountProvState">' + data.Region + '</span>' : "") +
+                                    (data.PostalCode ? '<span id="siteAccountPostalCode"> ' + data.PostalCode + '</span>': "") +
                                     '</p>'+
-                                    (locationData.Phone ? '<p id="siteAccountMainPhone"><a href="tel:' + locationData.Phone + '"><img src="' + phoneIcon + '" />' + formatPhone(locationData.Phone) + '</a></p>': "")+
-                                    '<p id="siteAccountDirections"><a href="http://maps.google.com/maps?daddr=' + (locationData.AddressLine ? locationData.AddressLine : "") + " " + (locationData.City ? locationData.City : "") + " " + (locationData.Region ? locationData.Region : "") + " " + (locationData.PostalCode ? locationData.PostalCode : "") + "&saddr=" + $lat + ", " + $lng + '" target="_blank"><img src="'+ directionsIcon+ '">'+$entries.dataset.directionstext+'</a></p>'+
+                                    (data.Phone ? '<p id="siteAccountMainPhone"><a href="tel:' + data.Phone + '"><img src="' + phoneIcon + '" />' + formatPhone(data.Phone) + '</a></p>': "")+
+                                    '<p id="siteAccountDirections"><a href="http://maps.google.com/maps?daddr=' + (data.AddressLine ? data.AddressLine : "") + " " + (data.City ? data.City : "") + " " + (data.Region ? data.Region : "") + " " + (data.PostalCode ? data.PostalCode : "") + "&saddr=" + $lat + ", " + $lng + '" target="_blank"><img src="'+ directionsIcon+ '">'+$entries.dataset.directionstext+'</a></p>'+
                                 '</div>'+
                             '</div>';
-    if (locationData.distance) {          
-        if (locationData.distance == 1) {
-            return entryHtml.innerHTML += "<p class='distance'>" + Math.round(locationData.distance) + " " + $entries.dataset.miletext + "</p>",
+    if (data.Distance) {          
+        if (data.Distance == 1) {
+            return entryHtml.innerHTML += "<p class='distance'>" + Math.round(data.Distance) + " " + $entries.dataset.miletext + "</p>",
             entryHtml
         } else {
-            return entryHtml.innerHTML += "<p class='distance'>" + Math.round(locationData.distance) + " " + $entries.dataset.milestext + "</p>",
+            return entryHtml.innerHTML += "<p class='distance'>" + Math.round(data.Distance) + " " + $entries.dataset.milestext + "</p>",
             entryHtml
         }
     } 
