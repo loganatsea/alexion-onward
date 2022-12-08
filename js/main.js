@@ -300,3 +300,18 @@ var init = function () {
 };
 
 init();
+
+/**
+  Sticky nav 
+**/
+
+$(document).scroll(function() {
+  var distance = $(window).scrollTop();
+    if(distance > 100){
+        $(".fixed-top").css({"position":"fixed"});
+        $(".navbar").css({"margin-top":"0"});
+    } else {
+        $(".fixed-top").css({"position":"absolute"});
+        $(".navbar").css({"margin-top":"100px"});
+    }
+});
