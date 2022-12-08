@@ -1,48 +1,46 @@
-{
-    "locations": [
-        {
-            "Latitude": 25.6855,
-            "Longitude": -80.3392,
-            "Name": "Baptist Hospital",
-            "AddressLine": "8900 N Kendall Dr",
-            "City": "Miami",
-            "Region": "FL",
-            "PostalCode": "33176-2118",
-            "Phone": "7865961960",
-            "Distance": 42
+[
+    {
+        "Latitude": 25.6855,
+        "Longitude": -80.3392,
+        "Name": "Baptist Hospital",
+        "AddressLine": "8900 N Kendall Dr",
+        "City": "Miami",
+        "Region": "FL",
+        "PostalCode": "33176-2118",
+        "Phone": "7865961960",
+        "Distance": 42
+    },
+    {
+        "Latitude": 25.6855,
+        "Longitude": -80.3392,
+        "Name": "Baptist Hospital Of Miami Inc Public Health Service Outpatient",
+        "AddressLine": "8900 N Kendall Dr",
+        "City": "Miami",
+        "Region": "FL",
+        "PostalCode": "33176-2118",
+        "Phone": "+1 786-596-9596",
+        "Distance": 42
+    },
+    {
+        "Latitude":25.6855,
+        "Longitude":-80.336,
+        "Name":"First Choice Infusion Attn Pharmacy",
+        "AddressLine":"9090 SW 87th Court STE 201",
+        "City":"Miami",
+        "Region":"FL",
+        "PostalCode":"33176",
+        "Phone":"(305) 412-3336",
+        "Distance": 42
         },
         {
-            "Latitude": 25.6855,
-            "Longitude": -80.3392,
-            "Name": "Baptist Hospital Of Miami Inc Public Health Service Outpatient",
-            "AddressLine": "8900 N Kendall Dr",
-            "City": "Miami",
-            "Region": "FL",
-            "PostalCode": "33176-2118",
-            "Phone": "+1 786-596-9596",
-            "Distance": 42
-        },
-        {
-            "Latitude":25.6855,
-            "Longitude":-80.336,
-            "Name":"First Choice Infusion Attn Pharmacy",
-            "AddressLine":"9090 SW 87th Court STE 201",
-            "City":"Miami",
-            "Region":"FL",
-            "PostalCode":"33176",
-            "Phone":"(305) 412-3336",
-            "Distance": 42
-         },
-         {
-            "Latitude":25.6855,
-            "Longitude":-80.3392,
-            "Name":"Baptist Hospital Of Miami Inc Public Health Service Outpatient",
-            "AddressLine":"8900 N Kendall Dr",
-            "City":"Miami",
-            "Region":"FL",
-            "PostalCode":"33176-2118",
-            "Phone":"+1 786-596-9596",
-            "Distance":42
-         }
-    ]
-}
+        "Latitude":25.6855,
+        "Longitude":-80.3392,
+        "Name":"Baptist Hospital Of Miami Inc Public Health Service Outpatient",
+        "AddressLine":"8900 N Kendall Dr",
+        "City":"Miami",
+        "Region":"FL",
+        "PostalCode":"33176-2118",
+        "Phone":"+1 786-596-9596",
+        "Distance":42
+        }
+]

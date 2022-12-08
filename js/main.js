@@ -108,7 +108,7 @@ function newAPIQuery(lat, lng) {
         type: "GET",
         dataType: "json"
     }).responseJSON,
-    $totalEntries = query.locations.length,
+    $totalEntries = query ? query.length : 0,
     $entriesShowing = $maxEntriesPerLoad < $totalEntries ? $maxEntriesPerLoad : $totalEntries
 }
 
@@ -118,7 +118,7 @@ function newSearch() {
     newAPIQuery($lat, $lng),
     clearMap(),
     clearEntryIndex(),
-    (query && 0 < query.locations.length ? successfulQuery : failedQuery)()) : failedQuery()
+    (query && 0 < $totalEntries ? successfulQuery : failedQuery)()) : failedQuery()
 }
 
 function clearMap() {
@@ -147,9 +147,9 @@ function clearEntryIndex() {
 }
 
 function loadPoints() {
-    if (query && 1 <= query.locations.length) {
+    if (query && 1 <= $totalEntries) {
         for (var i = 0; i < $entriesShowing; i++)
-            addMarker(query.locations[i],i.toString());
+            addMarker(query[i],i.toString());
         for (var marker = new google.maps.LatLngBounds, i = 0; i < $poiMarkers.length; i++)
             marker.extend($poiMarkers[i].getPosition());
         $map.fitBounds(marker)
@@ -175,9 +175,9 @@ function addMarker(data,i) {
 }
 
 function displayEntryIndex() {
-    if (query && 1 <= query.locations.length) {
+    if (query && 1 <= $totalEntries) {
         for (var i = 0; i < $entriesShowing; i++) {
-            $entriesList.appendChild(createIndexItem(query.locations[i], i));
+            $entriesList.appendChild(createIndexItem(query[i], i));
             $entriesList.appendChild(document.createElement("hr"));
         }
         for (var entry = document.getElementsByClassName("accordion-item"), i = 0; i < entry.length; i++)
@@ -192,7 +192,7 @@ function loadMoreEntryIndex() {
     var entriesToLoad;
     if ($entriesShowing < $totalEntries) {
         for (var entriesRemaining = $totalEntries - $entriesShowing, entriesToLoad = ($maxEntriesPerLoad < entriesRemaining ? $maxEntriesPerLoad : entriesRemaining), _entriesShowing = $entriesShowing; _entriesShowing < $entriesShowing + entriesToLoad; _entriesShowing++) {
-            $entriesList.appendChild(createIndexItem(query.locations[_entriesShowing], _entriesShowing));
+            $entriesList.appendChild(createIndexItem(query[_entriesShowing], _entriesShowing));
             $entriesList.appendChild(document.createElement("hr"));
         }
         for (var entry = document.getElementsByClassName("accordion-item"), _entriesShowing = $entriesShowing; _entriesShowing < $entriesShowing + entriesToLoad; _entriesShowing++)
@@ -207,7 +207,7 @@ function loadMoreEntryIndex() {
 
 function loadMoreMapPoints(entriesToLoad) {
     for (var i = $entriesShowing; i < $entriesShowing + entriesToLoad; i++)
-        addMarker(query.locations[i],i);
+        addMarker(query[i],i);
     for (var j = new google.maps.LatLngBounds, n = 0; n < $poiMarkers.length; n++)
         j.extend($poiMarkers[n].getPosition());
     $map.fitBounds(j)
