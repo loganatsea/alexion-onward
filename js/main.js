@@ -46,17 +46,19 @@ var mainIcon = "/images/icon-blue-location.svg",
 
 // Initialize and add the map
 function initMap() {
-    $map = new google.maps.Map(document.getElementById("map"), {
-        center: {
-            lat: initLat,
-            lng: initLng
-        },
-        zoom: 4,
-        styles: mapStyles,
-        disableDefaultUI: !0,
-        zoomControl: !0
-    });
-    initAutocomplete();
+    if (document.getElementById("map")) {
+        $map = new google.maps.Map(document.getElementById("map"), {
+            center: {
+                lat: initLat,
+                lng: initLng
+            },
+            zoom: 4,
+            styles: mapStyles,
+            disableDefaultUI: !0,
+            zoomControl: !0
+        });
+        initAutocomplete();
+    }
   }
   
 function manuallyRunAutocompleteSearch() {
@@ -276,17 +278,26 @@ var initializeData = function () {
     $locationResults = document.getElementById("location-results");
     $noEntries = document.getElementById("no-entries");
     $introText = document.getElementById("intro");
+    $heroContent = document.getElementById("hero-content");
+
 };
 
 var initializeEvents = function () {
-    $addressInput.addEventListener("keypress", function(event) { 
-        13 === event.keyCode && manuallyRunAutocompleteSearch()
-    });
-
-    $entriesList.addEventListener("scroll", function() {
-        var n = $entriesList.scrollHeight - $entriesList.offsetHeight;
-        $entriesList.scrollTop + 1>= n && loadMoreEntryIndex();
-    });
+    if (!$heroContent) {
+        document.getElementsByTagName('header')[0].classList.add("hero--no-background");
+    }
+    
+    if ($addressInput) {
+        $addressInput.addEventListener("keypress", function(event) { 
+            13 === event.keyCode && manuallyRunAutocompleteSearch()
+        });
+    }
+    if ($entriesList) {
+        $entriesList.addEventListener("scroll", function() {
+            var n = $entriesList.scrollHeight - $entriesList.offsetHeight;
+            $entriesList.scrollTop + 1>= n && loadMoreEntryIndex();
+        });
+    }
 };
 
 /**

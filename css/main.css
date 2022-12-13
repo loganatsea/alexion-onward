@@ -6,6 +6,7 @@
         padding: 0;
         box-sizing: border-box;
     }
+
     .hidden {
         display: none !important;
     }
@@ -37,6 +38,68 @@
         display: flex;
         flex-direction: column;
         padding: 10px;
+    }
+
+    header.hero--no-background {
+        height: 0;
+        background: none;
+    }
+
+    .main-content {
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-map {
+        padding-top: 80px;
+        padding-left: 5.5rem;
+    } 
+    .site-map .row {
+        margin: 0;
+    }
+
+    .site-map .row h2 {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .styled_list li {
+        white-space: unset;
+        float: unset;
+        display: list-item;
+        padding: 0;
+        line-height: 2.5rem;
+        font-weight: 500;
+    }
+
+    .styled_list {
+        list-style: revert;
+        padding-left: revert;
+    }
+
+    .styled_list li a {
+        border-bottom: 1px solid black;
+    }
+    
+    .styled_list li a:hover {
+        border-bottom: 1px solid blue;
+    }
+
+    .not-found {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .not-found a {
+        color: #017AC6;
+        font-weight: 700;
+        font-size: 1.15rem;
+        text-decoration: none;
+    }
+
+    .not-found p {
+        font-size: 1.5rem;
     }
     
     .top-nav {
@@ -1049,6 +1112,11 @@
         .dropdown-menu li:last-child {
             border-bottom: 1px solid #eaeaf3;
         }
+
+        .site-map {
+            padding-left: 4.5rem;
+            padding-top: 40px;
+        } 
     }
 
     
@@ -1086,10 +1154,23 @@
             margin-top: 11em;
             max-width: 100%;
         }
+
+        .site-map {
+            padding: 10px 2.5rem 0 2.5rem;
+        } 
+
+        .not-found {
+            padding: 0 2.5rem;
+        }
+
+        .not-found p {
+            font-size: 1.4rem;
+        }
+
     }
     
     @media screen and (max-width: 414px) {
-        header {
+        header.hero-background {
             background: url("../images/seniors-mobile.png") no-repeat;
             height: 550px;
         }
