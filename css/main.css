@@ -67,6 +67,8 @@
     .site-map {
         padding-top: 80px;
         padding-left: 5.5rem;
+        max-width: 1700px;
+        
     } 
     .site-map .row {
         margin: 0;
