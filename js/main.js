@@ -41,7 +41,8 @@ var mainIcon = "/images/icon-blue-location.svg",
     $entriesList,
     $noEntries,
     $introText,
-    $locationResults, 
+    $locationResults,
+    $stickyNav 
     $maxEntriesPerLoad = 25;
 
 // Initialize and add the map
@@ -279,10 +280,25 @@ var initializeData = function () {
     $noEntries = document.getElementById("no-entries");
     $introText = document.getElementById("intro");
     $heroContent = document.getElementById("hero-content");
+    $stickyNav = document.getElementsByClassName("js-sticky-nav")[0];
 
 };
 
 var initializeEvents = function () {
+
+    if ($stickyNav) {
+        $(document).scroll(function() {
+        var distance = $(window).scrollTop();
+            if(distance > 100){
+                $(".fixed-top").css({"position":"fixed"});
+                $(".navbar").css({"margin-top":"0"});
+            } else {
+                $(".fixed-top").css({"position":"absolute"});
+                $(".navbar").css({"margin-top":"100px"});
+            }
+        }); 
+    }
+
     if (!$heroContent) {
         document.getElementsByTagName('header')[0].classList.add("hero--no-background");
     }
@@ -312,17 +328,3 @@ var init = function () {
 
 init();
 
-/**
-  Sticky nav 
-**/
-
-$(document).scroll(function() {
-  var distance = $(window).scrollTop();
-    if(distance > 100){
-        $(".fixed-top").css({"position":"fixed"});
-        $(".navbar").css({"margin-top":"0"});
-    } else {
-        $(".fixed-top").css({"position":"absolute"});
-        $(".navbar").css({"margin-top":"100px"});
-    }
-});

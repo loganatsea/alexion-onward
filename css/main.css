@@ -7,12 +7,24 @@
         box-sizing: border-box;
     }
 
+    body {
+        letter-spacing: 0.05rem;
+    }
+
     .hidden {
         display: none !important;
     }
+
     .container-fluid {
-        max-width: 1440px;
         padding: 0;
+    }
+
+    .footer-middle .container-fluid, .footer-bottom .footer-container {
+        max-width: 1700px;
+    }
+
+    .footer-container {
+        margin: 0 auto;
     }
     
     .container {
@@ -33,11 +45,12 @@
     
     header {
         background: url("../images/seniors-enjoying-retirement-website version-v3.png");
-        height: 700px;
+        height: 900px;
         background-size: cover;
         display: flex;
         flex-direction: column;
         padding: 10px;
+        max-width: 1700px;
     }
 
     header.hero--no-background {
@@ -103,12 +116,17 @@
     }
     
     .top-nav {
-        background-color: #283c8c;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         height: 101px;
         padding: 10px 50px;
+        margin: 0 auto;
+        max-width: 1700px;
+    }
+
+    .top-nav__background {
+        background-color: #283c8c;
     }
     
     .top-nav>img {
@@ -150,8 +168,12 @@
     .navbar-toggler {
         border: none;
     }
-    .navbar-toggler:focus{
+    .navbar-toggler:focus {
         box-shadow: none;
+    }
+
+    .navbar__container {
+        max-width: 1700px;
     }
     
     .nav-menu {
@@ -229,6 +251,18 @@
         font-family: montserrat, sans-serif;
         font-weight: 800;
         font-style: normal;
+    }
+    .hero-content h1 {
+        color: #283c8c;
+        font-size: 3.5rem;
+    }
+
+    .hero-content .btn {
+        padding: 15px 30px;
+        font-size: 1.25rem;
+        font-weight: 500;
+        width: 400px;
+        text-align: center;
     }
     
     h2 {
@@ -312,6 +346,8 @@
         padding: 20px 10px;
         width: 60%;
         hyphens: auto;
+        display: flex;
+        align-items: center;
     }
     
     .circle {
@@ -333,6 +369,7 @@
     
     .video {
         background-image: url("../images/background-light.png");
+        background-size: cover;
         margin-top: 6rem;
         margin-bottom: 6rem;
         padding: 0;
@@ -364,7 +401,9 @@
         display: flex;
         max-width: 600px;
         font-size: 21px;
-        background-color: #fff!important;
+        color: #fff;
+        background-color: #283c8c;
+
     }
     
     .video .btn-reverse:hover {
@@ -374,12 +413,13 @@
         display: flex;
         max-width: 600px;
         font-size: 21px;
+        background-color: #283c8c;
     }
     
     .btn-reverse {
         background-color: #fff;
         border-radius: 44px;
-        color: #283c8c!important;
+        color: #283c8c;
         display: inline-block;
         font-family: montserrat, sans-serif;
         font-weight: 700;
@@ -388,6 +428,10 @@
         padding: 20px 50px;
         margin: 40px auto 60px;
         text-decoration: none!important;
+    }
+
+    .footer-middle p a.btn-reverse {
+        color: #283c8c
     }
     
     .btn-reverse:hover {
@@ -405,14 +449,14 @@
     a.tel-nav {
         color: #283c8c;
         font-family: montserrat, sans-serif;
-        font-weight: 800;
+        font-weight: 700;
         font-style: normal;
         font-size: 1.5rem;
     }
     
     .hero-content {
         max-width: 45%;
-        margin-top: 16em;
+        margin-top: 20%;
         padding: 3em 0 0 5em;
         z-index: 1;
     }
@@ -423,6 +467,13 @@
     
     .hero-content>p {
         font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+        line-height: 2rem;
+        margin-bottom: 5px;
+    }
+
+    .hero-tel {
+        margin-bottom: 30px;
     }
     
     .hero-tel a {
@@ -430,7 +481,11 @@
         font-family: montserrat, sans-serif;
         font-weight: 800;
         font-style: normal;
-        font-size: 34px;
+        font-size: 2.8rem;
+    }
+
+    #nav-phone, .hero-tel a {
+        letter-spacing: 0.3rem;
     }
     
     .highlight {
@@ -470,7 +525,7 @@
     .icon-box p {
         font-size: 22px;
         margin-bottom: 0;
-        hyphens: auto;
+        hyphens: none;
     }
     
     .icon-box-icon {
@@ -504,6 +559,19 @@
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
+
+    #year1-desktop {
+        display: block;
+    }
+
+    #year1-mobile {
+        display: none;
+    }
+
+    #year1-mobile img{
+        width: 193px;
+    }
+
     
     #year1>div {
         padding: 2rem;
@@ -524,14 +592,14 @@
     .right-triangle {
         display: block;
         width: 100%;
-        max-height: max(120px, calc(200vw / 1440));
+        max-height: max(120px, calc(200vw / 1700));
         fill: #3d4f97;
     }
     
     .right-triangle-white {
         display: block;
         width: 100%;
-        max-height: max(120px, calc(200vw / 1440));
+        max-height: max(120px, calc(200vw / 1700));
         fill: #fff;
         transform: scale(-2, 2);
     }
@@ -829,7 +897,7 @@
         padding-top: 8px;
     }
 
-    .footer-bottom > .footer-bottom-middle > p {
+    .footer-bottom > .footer-container .footer-bottom-middle > p {
         color: #fff;
     }
 
@@ -989,13 +1057,15 @@
 
     .navbar-light .navbar-nav .nav-link {
         color:#000;
+        font-size: 1.25rem;
     }
 
     .navbar-light .navbar-nav .nav-link.show {
         color:#000;
     }
 
-    .navbar-light .navbar-nav .nav-link:hover {
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link:focus {
         color:#000;
     }
 
@@ -1022,8 +1092,9 @@
     .dropdown-menu li a {
         height: 100%;
         width: 100%;
-        padding: 1rem;
+        padding: 0 1rem 1rem;
         height: 60px;
+        display: block;
     }
 
     .dropdown-menu li:hover {
@@ -1035,6 +1106,12 @@
 
     .dropdown-menu li:last-child {
         border-bottom: none
+    }
+
+    @media (min-width: 1500px) {
+        .navbar-light .navbar-nav .nav-link {
+            font-size: 1.5rem;
+        }
     }
 
     @media screen and (max-width: 1199px) {
@@ -1064,11 +1141,20 @@
         #nav-phone {
             display: none!important;
         }
+
         .hero-content {
-            max-width: 50%;
-            margin-top: 12em;
-            padding: 3em 0 0 3em;
+            max-width: none;
         }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            max-width: 50%;
+        }
+
+        .hero-content p {
+            max-width: 50%;
+        }
+
 
         /* Overwriting bootstrap */
         .navbar-expand-sm .navbar-nav {
@@ -1130,22 +1216,39 @@
             display: inline-block;
             padding: 18px 0;
         }
+
+        .hero-content {
+            margin-top: 25%;
+        }
+
+        .hero-content p {
+            max-width: 60%;
+        }
     }
     
     @media screen and (max-width: 767px) {
         p {
             font-size: 1.5rem;
         }
+
         .top-nav {
             justify-content: center;
         }
+
         .hero-content {
-            max-width: 65%;
-            margin-top: 12em;
-            padding: 3em 0 0 2em;
+            margin-top: 35%;
         }
+
+        .hero-content p{
+            max-width: 70%;
+        }
+
+        .hero-content h1{
+            max-width: 55%;
+        }
+
         .right-triangle {
-            max-height: max(60px, calc(200vw / 1440));
+            max-height: max(60px, calc(200vw / 1700));
         }
     }
     
@@ -1153,6 +1256,10 @@
         .hero-content {
             margin-top: 11em;
             max-width: 100%;
+        }
+
+        .hero-content .btn{
+            width: 300px;
         }
 
         .site-map {
@@ -1167,13 +1274,30 @@
             font-size: 1.4rem;
         }
 
+        #year1-desktop {
+            display: none;
+        }
+        #year1-mobile {
+            display: block;
+        }
+
     }
     
     @media screen and (max-width: 414px) {
-        header.hero-background {
-            background: url("../images/seniors-mobile.png") no-repeat;
-            height: 550px;
+        header:not(.hero--no-background) {
+            background: none;
+            height: 750px;
         }
+
+        header:not(.hero--no-background) .hero-content{
+            background: url("../images/seniors-mobile.png") no-repeat;
+        }
+
+        .navbar {
+            margin: 0;
+            position: relative;
+        }
+
         .overlay img {
             max-width: 50vw;
         }
@@ -1183,6 +1307,7 @@
             padding: 6em 1em 0;
             text-align: center!important;
         }
+
         .hero-content h1,
         .hero-content p,
         .hero-content .hero-tel,
@@ -1190,8 +1315,61 @@
             color: #fff;
             text-align: center;
         }
+
+        .hero-content h1{
+            font-size: 2.25rem;
+            max-width: 100%;
+        }
+
+        .hero-content p{
+            max-width: 100%;
+        }
+
         .hero-tel {
+            margin-top: 140px;
             padding: 0.75em;
             white-space: nowrap;
         }
+
+        .hero-tel a {
+            color: #283c8c;
+            font-size: 1.5rem;
+        }
+
+        .icon-box {
+            flex-direction: column;
+            margin: 100px 30px;
+            padding: 85px 20px 30px;
+        }
+
+        .icon-box.shadow-none {
+            padding-top: 40px;
+            padding-bottom: 0.25rem;
+            margin: 80px 0;
+        }
+
+        .icon-box.shadow-none:first-of-type {
+            margin-top: 120px;
+        }
+
+        .icon-box .icon-box-icon {
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: -100px;
+        }
+        .icon-box .icon-box-icon img{
+            margin: 0 auto;
+        }
+
+        .icon-box p {
+            width: 100%
+        }
+
+        #navbarSupportedContent>ul>li.nav-item.dropdown>ul>li {
+            padding: 15px 0;
+            font-weight: 500;
+        }
+
+
     }

@@ -13,18 +13,18 @@
 </head>
 
 <body id="top">
-    <div class="container-fluid">
+    <div class="container-fluid top-nav__background">
         <div class="top-nav">
-            <a href="https://www.alexionclinicaltrials.com" target="_blank"><img src=" images/alexion-logo.png"
+            <a href="https://www.alexionclinicaltrials.com" target="_blank"><img src=" images/alexion-logo.svg"
                     class="img-fluid"></a>
         </div>
     </div>
     <header class="container-fluid">
         <div class="overlay">
-            <nav class="navbar navbar-light navbar-expand-xl fixed-top">
-                <div class="container-fluid">
+            <nav class="navbar navbar-light navbar-expand-xl fixed-top "> <!-- use 'js-sticky-nav' to make nav sticky -->
+                <div class="container-fluid navbar__container">
                     <a class="navbar-brand" href="#">
-                        <a href="index.html"><img src="images/onward-logo.png" class="img-fluid p-1"></a>
+                        <a href="index.html"><img src="images/onward-logo.svg" class="img-fluid p-1"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -130,7 +130,7 @@
                             <div class="circle">1</div>
                         </div>
                         <div class="table-middle">
-                            <p>SCREENING</p>
+                            <p><strong>SCREENING</strong></p>
                             <p>up to 6 weeks before starting the study</p>
                         </div>
                         <div class="table-end">
@@ -142,7 +142,7 @@
                             <div class="circle">2</div>
                         </div>
                         <div class="table-middle">
-                            <p>TREATMENT</p>
+                            <p><strong>TREATMENT</strong></p>
                             <p>(YEAR 1 AND YEAR 2)</p>
                         </div>
                         <div class="table-end">
@@ -155,8 +155,8 @@
                             <div class="circle">3</div>
                         </div>
                         <div class="table-middle">
-                            <p>DOSE DECREASE AND FOLLOW UP</p>
-                            <p>30days after last dose of study medicine</p>
+                            <p><strong>DOSE DECREASE AND FOLLOW UP</strong></p>
+                            <p>30 days after last dose of study medicine</p>
                         </div>
                         <div class="table-end">
                             <p>Before you stop taking the study medicine completely, the dose will be slowly decreased.
@@ -166,6 +166,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container-fluid">
             <div class="row row--margin">
                 <div class="col-lg-12 video" id="expect">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="right-triangle-white"
@@ -173,7 +175,7 @@
                         <polygon points="0 0, 0 100, 100 0"></polygon>
                     </svg>
                     <h4>What happens during the study?</h4>
-                    <btn class="btn btn-reverse" href="">View Understanding Clinical Trials video</btn>
+                    <btn class="btn btn-reverse" href="#">View Understanding Clinical Trials video</btn>
 
                     <div class="video-embed">
                         <iframe src="//fast.wistia.net/embed/iframe/76s5twgvtw" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="349"></iframe>
@@ -333,7 +335,7 @@
             <p>YEAR 1</p>
         </div>
 
-        <div class="container-fluid mw-972">
+        <div class="container-fluid mw-972" id="year1-desktop">
             <div class="row row--margin">
                 <div class="col-12 text-center">
                     <img src="images/icons-year1.png" class="img-fluid">
@@ -349,6 +351,29 @@
             </div>
         </div>
 
+        <div class="container-fluid mw-972" id="year1-mobile">
+            <div class="row row--margin">
+                <div class="col-12 text-center">
+                    <div class="p-4"><img src="images/icon-year1-pill-people.svg" class="img-fluid"></div>
+                    <div class="p-4">
+                        <div>
+                            <p>There is a <span>75%</span> chance you would get danicopan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row--margin">
+                <div class="col-12 text-center">
+                    <div class="p-4"><img src="images/icon-year1-pill-person.svg" class="img-fluid"></div>
+                    <div class="p-4">
+                        <div>
+                            <p>There is a <span>25%</span> chance you would get placebo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid highlight-divider">
             <p>YEAR 2</p>
         </div>
@@ -356,8 +381,7 @@
         <div id="year2" class="container-fluid mw-330">
             <div class="row">
                 <div class="col-12 text-center">
-                    <div class="p-4"><img src="images/icon-pill.png" class="img-fluid"></div>
-                    <div class="p-4"><img src="images/icon-4people.png" class="img-fluid"></div>
+                    <div class="p-4"><img src="images/icon-pill-people.svg" class="img-fluid"></div>
                     <div class="p-4">
                         <div>
                             <p><span>Everyone</span> in the study gets danicopan.</p>
@@ -379,7 +403,7 @@
                 <div class="col-12">
                     <h2>What else should I know?</h2>
                     <div class="container mw-972 icon-text-box">
-                        <div class="icon-box shadow-none py-1">
+                        <div class="icon-box shadow-none">
                             <div class="icon-box-icon">
                                 <img src="images/icon-vax.png" />
                             </div>
@@ -388,7 +412,7 @@
                         </div>
                     </div>
                     <div class="container mw-972 icon-text-box">
-                        <div class="icon-box shadow-none py-1">
+                        <div class="icon-box shadow-none">
                             <div class="icon-box-icon">
                                 <img src="images/icon-signature.png" />
                             </div>
@@ -402,7 +426,7 @@
         <div class="container mw-972">
             <div class="row row--margin">
                 <div class="col-12">
-                    <p><a href="#top" class="btn btn-primary">Top</a></p>
+                    <p><a href="#top" class="btn btn-primary">Back to top</a></p>
                 </div>
             </div>
         </div>
@@ -457,7 +481,7 @@
         </div>
     </div>
 
-    <footer class="container-fluid">
+    <footer>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="right-triangle" preserveAspectRatio="none">
             <polygon points="100 0, 100 100, 0 100" />
         </svg>
@@ -520,21 +544,23 @@
 
             </div>
         </div>
-        <div class="footer-bottom row">
-            <div class="footer-bottom-start col-lg-2"><img src="images/ALX-logo-2.png"></div>
-            <div class="footer-bottom-middle col-lg-5">
-                <p>This website is intended for residents of the United States.</p>
-                <p>&copy; 2022 Alexion, Inc. All rights reserved.</p>
-                <small>Alexion &ndash; The OnwarD Study &bull; Study Website &bull; 18-Aug-2022 &bull; English
-                    (Principal) &bull; V1.1</small>
-            </div>
-            <div class="footer-bottom-end col-lg-5">
-                <ul>
-                    <li><a href="https://alexion.com/Legal#legalstatement" target="_blank">Legal Statement</a></li>
-                    <li><a href="https://alexion.com/Legal#privacynotice" target="_blank">Privacy Notice</a></li>
-                    <li><a href="https://alexion.com/Legal#termsofuse" target="_blank">Terms of Use</a></li>
-                    <li><a href="https://alexion.com/Legal#legalstatement" target="_blank">Sitemap</a></li>
-                </ul>
+        <div class="footer-bottom">
+            <div class="footer-container row">
+                <div class="footer-bottom-start col-lg-2"><img src="images/ALX-logo-2.png"></div>
+                <div class="footer-bottom-middle col-lg-5">
+                    <p>This website is intended for residents of the United States.</p>
+                    <p>&copy; 2022 Alexion, Inc. All rights reserved.</p>
+                    <small>Alexion &ndash; The OnwarD Study &bull; Study Website &bull; 18-Aug-2022 &bull; English
+                        (Principal) &bull; V1.1</small>
+                </div>
+                <div class="footer-bottom-end col-lg-5">
+                    <ul>
+                        <li><a href="https://alexion.com/Legal#legalstatement" target="_blank">Legal Statement</a></li>
+                        <li><a href="https://alexion.com/Legal#privacynotice" target="_blank">Privacy Notice</a></li>
+                        <li><a href="https://alexion.com/Legal#termsofuse" target="_blank">Terms of Use</a></li>
+                        <li><a href="https://alexion.com/Legal#legalstatement" target="_blank">Sitemap</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
