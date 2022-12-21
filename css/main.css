@@ -396,7 +396,7 @@
         text-align: center;
     }
     
-    .video .btn-reverse {
+    .video .video-subtitle {
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -405,17 +405,11 @@
         font-size: 21px;
         color: #fff;
         background-color: #283c8c;
-
-    }
-    
-    .video .btn-reverse:hover {
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        max-width: 600px;
-        font-size: 21px;
-        background-color: #283c8c;
+        border-radius: 44px;
+        font-weight: 700;
+        padding: 20px 50px;
+        margin: 40px auto 60px;
+        font-family: montserrat, sans-serif;
     }
     
     .btn-reverse {
@@ -540,6 +534,20 @@
     
     .icon-box-icon img {
         border-radius: 40px;
+    }
+
+    .video .video-subtitle {
+        margin: 40px 10px 60px;
+    }
+
+    .icon-box.shadow-none {
+        padding-top: 0;
+        padding-bottom: 0.25rem;
+        margin: 40px 6px 40px 90px;
+    }
+
+    .icon-box.shadow-none p{
+        text-align: left;
     }
     
     .icon-text>p {
@@ -1349,6 +1357,12 @@
             padding-bottom: 0.25rem;
             margin: 80px 0;
         }
+
+        .icon-box.shadow-none p{
+            text-align: center;
+        }
+
+        
 
         .icon-box.shadow-none:first-of-type {
             margin-top: 120px;
